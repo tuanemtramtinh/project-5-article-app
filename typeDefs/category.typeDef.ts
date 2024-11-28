@@ -1,11 +1,4 @@
-export const typeDefs = `#graphql
-  type Article {
-    id: String,
-    title: String,
-    avatar: String,
-    description: String
-  }
-
+const CategoryTypeDefs = `#graphql
   type Category {
     id: String,
     title: String,
@@ -18,16 +11,8 @@ export const typeDefs = `#graphql
   }
 
   type Query {
-    getListArticle: [Article],
-    getArticle(id: String): Article,
     getListCategory: [Category],
     getCategory(id: String): Category
-  }
-
-  input ArticleInput {
-    title: String,
-    avatar: String,
-    description: String
   }
 
   input CategoryInput {
@@ -36,11 +21,10 @@ export const typeDefs = `#graphql
   }
 
   type Mutation {
-    createArticle(article: ArticleInput): Article,
-    deleteArticle(id: String): ResponseCode,
-    updateArticle(id: String, article: ArticleInput): Article,
     createCategory(category: CategoryInput): Category,
     deleteCategory(id: String): ResponseCode,
     updateCategory(id: String, category: CategoryInput): Category
   }
 `;
+
+export default CategoryTypeDefs;
